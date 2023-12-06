@@ -99,6 +99,7 @@
             Controls.Add(pictureBox1);
             Name = "ProductSell";
             Size = new Size(134, 86);
+            MouseDoubleClick += ProductSell_MouseDoubleClick;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

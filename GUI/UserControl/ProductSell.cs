@@ -10,14 +10,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI
 {
+
     public partial class ProductSell : UserControl
     {
         ProductServicesBUS servicesBUS = new ProductServicesBUS();
         Product product = new Product();
-        int ProductSet;
+        public event EventHandler doubleClickSender;
+        public int ProductIdCart { get; set; }
         public ProductSell(int ProductId)
         {
             InitializeComponent();
@@ -42,6 +45,13 @@ namespace GUI
             }
             priceProduct.Text = product.Price.ToString() + "K";
             sizeProduct.Text = product.ProductType.ToString();
+        }
+
+
+        private void ProductSell_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ProductIdCart = product.Id;
+            doubleClickSender(sender, e);
         }
     }
 }

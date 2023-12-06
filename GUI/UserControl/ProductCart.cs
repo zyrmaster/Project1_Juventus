@@ -39,8 +39,13 @@ namespace GUI
                     cateProduct.Text = "Không xác định";
                     break;
             }
-            priceProduct.Text = product.Price.ToString() + "K";
+            priceProduct.Text = product.Price.ToString();
             sizeProduct.Text = product.ProductType.ToString();
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            Parent.Controls.Remove(this);
         }
     }
 }

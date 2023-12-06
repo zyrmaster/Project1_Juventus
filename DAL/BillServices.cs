@@ -27,5 +27,9 @@ namespace DAL
         {
             return _dbContext.Bills.OrderByDescending(bill => bill.DateIn).Take(20).ToList();
         }
+        public int GetLastIdBill()
+        {
+            return _dbContext.Bills.OrderBy(c=>c.Id).Last().Id;
+        }
     }
 }

@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductCart));
             nameProduct = new Label();
             priceProduct = new Label();
             sizeProduct = new Label();
             pictureBox1 = new PictureBox();
             cateProduct = new Label();
+            deleteBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -82,11 +84,22 @@
             cateProduct.TabIndex = 4;
             cateProduct.Text = "Đồ uống";
             // 
+            // deleteBtn
+            // 
+            deleteBtn.Image = (Image)resources.GetObject("deleteBtn.Image");
+            deleteBtn.Location = new Point(505, 4);
+            deleteBtn.Name = "deleteBtn";
+            deleteBtn.Size = new Size(37, 32);
+            deleteBtn.TabIndex = 5;
+            deleteBtn.UseVisualStyleBackColor = true;
+            deleteBtn.Click += deleteBtn_Click;
+            // 
             // ProductCart
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(deleteBtn);
             Controls.Add(cateProduct);
             Controls.Add(pictureBox1);
             Controls.Add(sizeProduct);
@@ -94,7 +107,7 @@
             Controls.Add(nameProduct);
             Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "ProductCart";
-            Size = new Size(563, 41);
+            Size = new Size(550, 41);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -107,5 +120,6 @@
         private Label sizeProduct;
         private PictureBox pictureBox1;
         private Label cateProduct;
+        private Button deleteBtn;
     }
 }

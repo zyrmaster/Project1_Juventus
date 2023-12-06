@@ -23,7 +23,7 @@ namespace GUI
 
         private void createBill_Click(object sender, EventArgs e)
         {
-            CreateBill createBill = new CreateBill();
+            CreateBill createBill = new CreateBill(0);
             createBill.ShowDialog();
         }
         public void LoadBill()

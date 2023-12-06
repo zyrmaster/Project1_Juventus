@@ -30,49 +30,61 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateBill));
             groupBox1 = new GroupBox();
-            label9 = new Label();
-            textBox3 = new TextBox();
+            addCustomer = new Button();
+            inputDiscount = new TextBox();
+            discountCheck = new CheckBox();
+            phoneCustomer = new TextBox();
+            phoneNumber = new Label();
+            customerName = new TextBox();
+            customer = new Label();
+            customerMoney = new ComboBox();
+            totalMoney = new TextBox();
             label8 = new Label();
-            textBox2 = new TextBox();
+            leftMoney = new TextBox();
             label7 = new Label();
-            textBox1 = new TextBox();
             label6 = new Label();
-            comboBox2 = new ComboBox();
+            tableList = new ComboBox();
             label5 = new Label();
-            comboBox1 = new ComboBox();
+            typeBill = new ComboBox();
             label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            billCode = new Label();
             billControl = new FlowLayoutPanel();
             groupBox2 = new GroupBox();
             textBox4 = new TextBox();
             label10 = new Label();
             productShow = new FlowLayoutPanel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            confirmBtn = new Button();
+            payBtn = new Button();
+            printBtn = new Button();
+            exitBtn = new Button();
+            cashBtn = new Button();
+            bankBtn = new Button();
+            postBtn = new Button();
+            getoutBtn = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(addCustomer);
+            groupBox1.Controls.Add(inputDiscount);
+            groupBox1.Controls.Add(discountCheck);
+            groupBox1.Controls.Add(phoneCustomer);
+            groupBox1.Controls.Add(phoneNumber);
+            groupBox1.Controls.Add(customerName);
+            groupBox1.Controls.Add(customer);
+            groupBox1.Controls.Add(customerMoney);
+            groupBox1.Controls.Add(totalMoney);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(leftMoney);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(comboBox2);
+            groupBox1.Controls.Add(tableList);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(typeBill);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(billCode);
             groupBox1.Controls.Add(billControl);
             groupBox1.Location = new Point(478, 3);
             groupBox1.Name = "groupBox1";
@@ -81,147 +93,209 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "HOÁ ĐƠN";
             // 
-            // label9
+            // addCustomer
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(5, 413);
-            label9.Name = "label9";
-            label9.Size = new Size(158, 21);
-            label9.TabIndex = 14;
-            label9.Text = "Nhân viên : Phạm Tiến Đức";
+            addCustomer.BackColor = Color.SeaShell;
+            addCustomer.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            addCustomer.Location = new Point(234, 372);
+            addCustomer.Name = "addCustomer";
+            addCustomer.Padding = new Padding(20, 0, 0, 0);
+            addCustomer.Size = new Size(26, 25);
+            addCustomer.TabIndex = 9;
+            addCustomer.Text = "+";
+            addCustomer.TextAlign = ContentAlignment.MiddleLeft;
+            addCustomer.UseVisualStyleBackColor = false;
+            addCustomer.Click += addCustomer_Click;
             // 
-            // textBox3
+            // inputDiscount
             // 
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Location = new Point(319, 449);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(130, 20);
-            textBox3.TabIndex = 13;
+            inputDiscount.BackColor = SystemColors.ScrollBar;
+            inputDiscount.BorderStyle = BorderStyle.None;
+            inputDiscount.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            inputDiscount.Location = new Point(32, 472);
+            inputDiscount.Name = "inputDiscount";
+            inputDiscount.Size = new Size(130, 21);
+            inputDiscount.TabIndex = 21;
+            inputDiscount.Visible = false;
+            // 
+            // discountCheck
+            // 
+            discountCheck.AutoSize = true;
+            discountCheck.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            discountCheck.Location = new Point(32, 441);
+            discountCheck.Name = "discountCheck";
+            discountCheck.Size = new Size(99, 25);
+            discountCheck.TabIndex = 20;
+            discountCheck.Text = "Mã giảm giá";
+            discountCheck.UseVisualStyleBackColor = true;
+            discountCheck.CheckedChanged += discountCheck_CheckedChanged;
+            // 
+            // phoneCustomer
+            // 
+            phoneCustomer.BackColor = SystemColors.ScrollBar;
+            phoneCustomer.BorderStyle = BorderStyle.None;
+            phoneCustomer.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            phoneCustomer.Location = new Point(98, 402);
+            phoneCustomer.Name = "phoneCustomer";
+            phoneCustomer.Size = new Size(130, 21);
+            phoneCustomer.TabIndex = 19;
+            phoneCustomer.TextChanged += textBox2_TextChanged;
+            // 
+            // phoneNumber
+            // 
+            phoneNumber.AutoSize = true;
+            phoneNumber.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            phoneNumber.Location = new Point(21, 402);
+            phoneNumber.Name = "phoneNumber";
+            phoneNumber.Size = new Size(71, 21);
+            phoneNumber.TabIndex = 18;
+            phoneNumber.Text = "Điện thoại :";
+            // 
+            // customerName
+            // 
+            customerName.BackColor = SystemColors.ScrollBar;
+            customerName.BorderStyle = BorderStyle.None;
+            customerName.Enabled = false;
+            customerName.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            customerName.Location = new Point(98, 375);
+            customerName.Name = "customerName";
+            customerName.Size = new Size(130, 21);
+            customerName.TabIndex = 17;
+            // 
+            // customer
+            // 
+            customer.AutoSize = true;
+            customer.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            customer.Location = new Point(11, 375);
+            customer.Name = "customer";
+            customer.Size = new Size(81, 21);
+            customer.TabIndex = 16;
+            customer.Text = "Khách hàng :";
+            // 
+            // customerMoney
+            // 
+            customerMoney.FlatStyle = FlatStyle.Flat;
+            customerMoney.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            customerMoney.FormattingEnabled = true;
+            customerMoney.Items.AddRange(new object[] { "0", "1000", "2000", "5000", "10000", "20000", "50000", "100000", "200000", "500000" });
+            customerMoney.Location = new Point(454, 437);
+            customerMoney.Name = "customerMoney";
+            customerMoney.Size = new Size(130, 29);
+            customerMoney.TabIndex = 15;
+            customerMoney.SelectedIndexChanged += customerMoney_SelectedIndexChanged;
+            customerMoney.TextChanged += customerMoney_TextChanged;
+            // 
+            // totalMoney
+            // 
+            totalMoney.BackColor = SystemColors.ScrollBar;
+            totalMoney.BorderStyle = BorderStyle.None;
+            totalMoney.Enabled = false;
+            totalMoney.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            totalMoney.Location = new Point(454, 472);
+            totalMoney.Name = "totalMoney";
+            totalMoney.Size = new Size(130, 21);
+            totalMoney.TabIndex = 13;
+            totalMoney.TextChanged += totalMoney_TextChanged;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(219, 449);
+            label8.Location = new Point(373, 472);
             label8.Name = "label8";
             label8.Size = new Size(65, 21);
             label8.TabIndex = 12;
             label8.Text = "Tổng tiền :";
             // 
-            // textBox2
+            // leftMoney
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Location = new Point(320, 510);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(130, 20);
-            textBox2.TabIndex = 11;
+            leftMoney.BackColor = SystemColors.ScrollBar;
+            leftMoney.BorderStyle = BorderStyle.None;
+            leftMoney.Enabled = false;
+            leftMoney.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            leftMoney.Location = new Point(454, 500);
+            leftMoney.Name = "leftMoney";
+            leftMoney.Size = new Size(130, 21);
+            leftMoney.TabIndex = 11;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(219, 510);
+            label7.Location = new Point(370, 500);
             label7.Name = "label7";
             label7.Size = new Size(68, 21);
             label7.TabIndex = 10;
             label7.Text = "Tiền thừa :";
             // 
-            // textBox1
-            // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(319, 478);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(130, 20);
-            textBox1.TabIndex = 9;
-            // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(218, 478);
+            label6.Location = new Point(351, 440);
             label6.Name = "label6";
             label6.Size = new Size(95, 21);
             label6.TabIndex = 8;
             label6.Text = "Tiền khách trả :";
             // 
-            // comboBox2
+            // tableList
             // 
-            comboBox2.FlatStyle = FlatStyle.Flat;
-            comboBox2.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(71, 501);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(130, 29);
-            comboBox2.TabIndex = 7;
+            tableList.FlatStyle = FlatStyle.Flat;
+            tableList.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            tableList.FormattingEnabled = true;
+            tableList.Location = new Point(454, 402);
+            tableList.Name = "tableList";
+            tableList.Size = new Size(130, 29);
+            tableList.TabIndex = 7;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(3, 505);
+            label5.Location = new Point(386, 406);
             label5.Name = "label5";
             label5.Size = new Size(52, 21);
             label5.TabIndex = 6;
             label5.Text = "Bàn số :";
             // 
-            // comboBox1
+            // typeBill
             // 
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Tại quán", "Mang đi" });
-            comboBox1.Location = new Point(71, 466);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(130, 29);
-            comboBox1.TabIndex = 5;
+            typeBill.FlatStyle = FlatStyle.Flat;
+            typeBill.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            typeBill.FormattingEnabled = true;
+            typeBill.Items.AddRange(new object[] { "Tại quán", "Mang đi" });
+            typeBill.Location = new Point(454, 367);
+            typeBill.Name = "typeBill";
+            typeBill.Size = new Size(130, 29);
+            typeBill.TabIndex = 5;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(3, 469);
+            label4.Location = new Point(386, 370);
             label4.Name = "label4";
             label4.Size = new Size(62, 21);
             label4.TabIndex = 4;
             label4.Text = "Loại đơn :";
             // 
-            // label3
+            // billCode
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Bahnschrift Light Condensed", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(418, 416);
-            label3.Name = "label3";
-            label3.Size = new Size(169, 17);
-            label3.TabIndex = 3;
-            label3.Text = "Giờ khách ra : 2023-11-15 12:30:00";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Bahnschrift Light Condensed", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(418, 396);
-            label2.Name = "label2";
-            label2.Size = new Size(175, 17);
-            label2.TabIndex = 2;
-            label2.Text = "Giờ khách vào : 2023-11-15 12:30:00";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(5, 439);
-            label1.Name = "label1";
-            label1.Size = new Size(87, 21);
-            label1.TabIndex = 1;
-            label1.Text = "Mã hoá đơn : 1";
+            billCode.AutoSize = true;
+            billCode.Font = new Font("Bahnschrift Light Condensed", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            billCode.Location = new Point(11, 349);
+            billCode.Name = "billCode";
+            billCode.Size = new Size(87, 21);
+            billCode.TabIndex = 1;
+            billCode.Text = "Mã hoá đơn : 1";
             // 
             // billControl
             // 
+            billControl.AutoScroll = true;
             billControl.BorderStyle = BorderStyle.FixedSingle;
             billControl.Location = new Point(11, 24);
             billControl.Name = "billControl";
-            billControl.Size = new Size(573, 369);
+            billControl.Size = new Size(573, 322);
             billControl.TabIndex = 0;
             // 
             // groupBox2
@@ -264,77 +338,148 @@
             productShow.Size = new Size(447, 573);
             productShow.TabIndex = 0;
             // 
-            // button1
+            // confirmBtn
             // 
-            button1.BackColor = Color.SeaShell;
-            button1.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(495, 564);
-            button1.Name = "button1";
-            button1.Padding = new Padding(20, 0, 0, 0);
-            button1.Size = new Size(124, 50);
-            button1.TabIndex = 5;
-            button1.Text = "Xác nhận";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = false;
+            confirmBtn.BackColor = Color.SeaShell;
+            confirmBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            confirmBtn.Image = (Image)resources.GetObject("confirmBtn.Image");
+            confirmBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            confirmBtn.Location = new Point(495, 564);
+            confirmBtn.Name = "confirmBtn";
+            confirmBtn.Padding = new Padding(20, 0, 0, 0);
+            confirmBtn.Size = new Size(124, 50);
+            confirmBtn.TabIndex = 5;
+            confirmBtn.Text = "Xác nhận";
+            confirmBtn.TextAlign = ContentAlignment.MiddleRight;
+            confirmBtn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // payBtn
             // 
-            button2.BackColor = Color.SeaShell;
-            button2.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(638, 564);
-            button2.Name = "button2";
-            button2.Padding = new Padding(20, 0, 0, 0);
-            button2.Size = new Size(137, 50);
-            button2.TabIndex = 6;
-            button2.Text = "Thanh toán";
-            button2.TextAlign = ContentAlignment.MiddleRight;
-            button2.UseVisualStyleBackColor = false;
+            payBtn.BackColor = Color.SeaShell;
+            payBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            payBtn.Image = (Image)resources.GetObject("payBtn.Image");
+            payBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            payBtn.Location = new Point(638, 564);
+            payBtn.Name = "payBtn";
+            payBtn.Padding = new Padding(20, 0, 0, 0);
+            payBtn.Size = new Size(137, 50);
+            payBtn.TabIndex = 6;
+            payBtn.Text = "Thanh toán";
+            payBtn.TextAlign = ContentAlignment.MiddleRight;
+            payBtn.UseVisualStyleBackColor = false;
+            payBtn.Click += payBtn_Click;
             // 
-            // button3
+            // printBtn
             // 
-            button3.BackColor = Color.SeaShell;
-            button3.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(781, 564);
-            button3.Name = "button3";
-            button3.Padding = new Padding(20, 0, 0, 0);
-            button3.Size = new Size(137, 50);
-            button3.TabIndex = 7;
-            button3.Text = "In hoá đơn";
-            button3.TextAlign = ContentAlignment.MiddleRight;
-            button3.UseVisualStyleBackColor = false;
+            printBtn.BackColor = Color.SeaShell;
+            printBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            printBtn.Image = (Image)resources.GetObject("printBtn.Image");
+            printBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            printBtn.Location = new Point(781, 564);
+            printBtn.Name = "printBtn";
+            printBtn.Padding = new Padding(20, 0, 0, 0);
+            printBtn.Size = new Size(137, 50);
+            printBtn.TabIndex = 7;
+            printBtn.Text = "In hoá đơn";
+            printBtn.TextAlign = ContentAlignment.MiddleRight;
+            printBtn.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // exitBtn
             // 
-            button4.BackColor = Color.SeaShell;
-            button4.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(924, 564);
-            button4.Name = "button4";
-            button4.Padding = new Padding(20, 0, 0, 0);
-            button4.Size = new Size(122, 50);
-            button4.TabIndex = 8;
-            button4.Text = "Huỷ đơn";
-            button4.TextAlign = ContentAlignment.MiddleRight;
-            button4.UseVisualStyleBackColor = false;
+            exitBtn.BackColor = Color.SeaShell;
+            exitBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            exitBtn.Image = (Image)resources.GetObject("exitBtn.Image");
+            exitBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            exitBtn.Location = new Point(924, 564);
+            exitBtn.Name = "exitBtn";
+            exitBtn.Padding = new Padding(20, 0, 0, 0);
+            exitBtn.Size = new Size(122, 50);
+            exitBtn.TabIndex = 8;
+            exitBtn.Text = "Huỷ bỏ";
+            exitBtn.TextAlign = ContentAlignment.MiddleRight;
+            exitBtn.UseVisualStyleBackColor = false;
+            // 
+            // cashBtn
+            // 
+            cashBtn.BackColor = Color.SeaShell;
+            cashBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cashBtn.Image = (Image)resources.GetObject("cashBtn.Image");
+            cashBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            cashBtn.Location = new Point(489, 564);
+            cashBtn.Name = "cashBtn";
+            cashBtn.Padding = new Padding(20, 0, 0, 0);
+            cashBtn.Size = new Size(137, 50);
+            cashBtn.TabIndex = 9;
+            cashBtn.Text = "Tiền mặt";
+            cashBtn.UseVisualStyleBackColor = false;
+            cashBtn.Visible = false;
+            cashBtn.Click += cashBtn_Click;
+            // 
+            // bankBtn
+            // 
+            bankBtn.BackColor = Color.SeaShell;
+            bankBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            bankBtn.Image = (Image)resources.GetObject("bankBtn.Image");
+            bankBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            bankBtn.Location = new Point(638, 564);
+            bankBtn.Name = "bankBtn";
+            bankBtn.Padding = new Padding(20, 0, 0, 0);
+            bankBtn.Size = new Size(137, 50);
+            bankBtn.TabIndex = 10;
+            bankBtn.Text = "Ngân hàng";
+            bankBtn.TextAlign = ContentAlignment.MiddleRight;
+            bankBtn.UseVisualStyleBackColor = false;
+            bankBtn.Visible = false;
+            // 
+            // postBtn
+            // 
+            postBtn.BackColor = Color.SeaShell;
+            postBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            postBtn.Image = (Image)resources.GetObject("postBtn.Image");
+            postBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            postBtn.Location = new Point(781, 564);
+            postBtn.Name = "postBtn";
+            postBtn.Padding = new Padding(20, 0, 0, 0);
+            postBtn.Size = new Size(137, 50);
+            postBtn.TabIndex = 11;
+            postBtn.Text = "Tín dụng";
+            postBtn.TextAlign = ContentAlignment.MiddleRight;
+            postBtn.UseVisualStyleBackColor = false;
+            postBtn.Visible = false;
+            postBtn.Click += postBtn_Click;
+            // 
+            // getoutBtn
+            // 
+            getoutBtn.BackColor = Color.SeaShell;
+            getoutBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            getoutBtn.Image = (Image)resources.GetObject("getoutBtn.Image");
+            getoutBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            getoutBtn.Location = new Point(924, 564);
+            getoutBtn.Name = "getoutBtn";
+            getoutBtn.Padding = new Padding(20, 0, 0, 0);
+            getoutBtn.Size = new Size(122, 50);
+            getoutBtn.TabIndex = 12;
+            getoutBtn.Text = "Thoát";
+            getoutBtn.TextAlign = ContentAlignment.MiddleRight;
+            getoutBtn.UseVisualStyleBackColor = false;
+            getoutBtn.Visible = false;
+            getoutBtn.Click += getoutBtn_Click;
             // 
             // CreateBill
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1074, 648);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(getoutBtn);
+            Controls.Add(exitBtn);
+            Controls.Add(confirmBtn);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            Controls.Add(bankBtn);
+            Controls.Add(postBtn);
+            Controls.Add(cashBtn);
+            Controls.Add(payBtn);
+            Controls.Add(printBtn);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "CreateBill";
             StartPosition = FormStartPosition.CenterScreen;
@@ -350,27 +495,35 @@
 
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private Button button1;
-        private Button button2;
-        private Label label1;
+        private Button confirmBtn;
+        private Button payBtn;
+        private Label billCode;
         private FlowLayoutPanel billControl;
         private FlowLayoutPanel productShow;
-        private Button button3;
-        private Button button4;
-        private ComboBox comboBox2;
+        private Button printBtn;
+        private Button exitBtn;
+        private ComboBox tableList;
         private Label label5;
-        private ComboBox comboBox1;
+        private ComboBox typeBill;
         private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label label9;
-        private TextBox textBox3;
+        private TextBox totalMoney;
         private Label label8;
-        private TextBox textBox2;
+        private TextBox leftMoney;
         private Label label7;
-        private TextBox textBox1;
         private Label label6;
         private TextBox textBox4;
         private Label label10;
+        private ComboBox customerMoney;
+        private TextBox customerName;
+        private Label customer;
+        private TextBox inputDiscount;
+        private CheckBox discountCheck;
+        private TextBox phoneCustomer;
+        private Label phoneNumber;
+        private Button addCustomer;
+        private Button cashBtn;
+        private Button bankBtn;
+        private Button postBtn;
+        private Button getoutBtn;
     }
 }

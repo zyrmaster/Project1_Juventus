@@ -19,5 +19,9 @@ namespace BUS
         {
             return billServices.GetBillCount();
         }
+        public int GetLastIDBill()
+        {
+            return billServices.GetLastIdBill();
+        }
     }
 }
