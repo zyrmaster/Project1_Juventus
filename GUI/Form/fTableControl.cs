@@ -160,9 +160,10 @@ namespace GUI
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            if (_tableInfo.Status.ToString() == "1")
+            if (_tableInfo.Status.ToString() == "1" || _tableInfo.Status.ToString() == "1")
             {
-                MessageBox.Show("Không xóa bàn đang có khách !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Không thể xoá bàn trong trạng thái này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
             DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa bàn này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)

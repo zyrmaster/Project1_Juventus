@@ -115,7 +115,6 @@ namespace GUI
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-
             fProductInfo fProductInfo = new fProductInfo(2,1);
             fProductInfo.ShowDialog();
             LoadAllData();

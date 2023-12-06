@@ -51,9 +51,9 @@
             payLabel = new Label();
             panel2 = new Panel();
             leaveBtn = new Button();
-            deleteBtn = new Button();
             changeBtn = new Button();
             infoBtn = new Button();
+            deleteVB = new Button();
             flowLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -294,8 +294,8 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.ControlLight;
+            panel2.Controls.Add(deleteVB);
             panel2.Controls.Add(leaveBtn);
-            panel2.Controls.Add(deleteBtn);
             panel2.Controls.Add(changeBtn);
             panel2.Controls.Add(infoBtn);
             panel2.Dock = DockStyle.Fill;
@@ -319,22 +319,6 @@
             leaveBtn.Text = "Khóa bàn";
             leaveBtn.UseVisualStyleBackColor = false;
             leaveBtn.Click += leaveBtn_Click;
-            // 
-            // deleteBtn
-            // 
-            deleteBtn.BackColor = Color.Red;
-            deleteBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            deleteBtn.ForeColor = SystemColors.ButtonHighlight;
-            deleteBtn.Image = (Image)resources.GetObject("deleteBtn.Image");
-            deleteBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            deleteBtn.Location = new Point(332, 40);
-            deleteBtn.Name = "deleteBtn";
-            deleteBtn.Padding = new Padding(20, 0, 0, 0);
-            deleteBtn.Size = new Size(150, 49);
-            deleteBtn.TabIndex = 12;
-            deleteBtn.Text = "Xóa bàn";
-            deleteBtn.UseVisualStyleBackColor = false;
-            deleteBtn.Click += deleteBtn_Click;
             // 
             // changeBtn
             // 
@@ -366,6 +350,22 @@
             infoBtn.TabIndex = 10;
             infoBtn.Text = "Thông tin";
             infoBtn.UseVisualStyleBackColor = false;
+            // 
+            // deleteVB
+            // 
+            deleteVB.BackColor = Color.Red;
+            deleteVB.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            deleteVB.ForeColor = SystemColors.ButtonHighlight;
+            deleteVB.Image = (Image)resources.GetObject("deleteVB.Image");
+            deleteVB.ImageAlign = ContentAlignment.MiddleLeft;
+            deleteVB.Location = new Point(332, 40);
+            deleteVB.Name = "deleteVB";
+            deleteVB.Padding = new Padding(20, 0, 0, 0);
+            deleteVB.Size = new Size(150, 49);
+            deleteVB.TabIndex = 14;
+            deleteVB.Text = "Xóa bàn";
+            deleteVB.UseVisualStyleBackColor = false;
+            deleteVB.Click += deleteVB_Click;
             // 
             // ctTableView
             // 
@@ -411,5 +411,6 @@
         private Label statusTable;
         private TextBox statusTableTxt;
         private Button saveBtn;
+        private Button deleteVB;
     }
 }

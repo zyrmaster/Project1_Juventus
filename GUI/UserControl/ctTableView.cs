@@ -68,6 +68,7 @@ namespace GUI
                     ctTableManager.Controls.Clear();
                     ctTableManager.LoadTableList();
                     MessageBox.Show("Khóa bàn thành công !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
             }
 
@@ -82,12 +83,14 @@ namespace GUI
                 {
                     ctTableManager.LoadTableList();
                     MessageBox.Show("Mở khóa bàn thành công !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
             }
             if (_tableInfo.Status.ToString().Equals("1"))
             {
                 ctTableManager.LoadTableList();
                 MessageBox.Show("Không thể khóa đối với loại bàn đang trong trạng thái này !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
         }
@@ -133,7 +136,36 @@ namespace GUI
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
+            if (_tableInfo.Status.ToString() == "1" || _tableInfo.Status.ToString() == "1")
+            {
+                MessageBox.Show("Không thể xoá bàn trong trạng thái này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn xoá bàn này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (tbbus.DeleteByIdBUS(Convert.ToInt32(tableIdTxt.Text)))
+                {
+                    MessageBox.Show("Xoá bàn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
 
+        private void deleteVB_Click(object sender, EventArgs e)
+        {
+            if (_tableInfo.Status.ToString() == "1" || _tableInfo.Status.ToString() == "1")
+            {
+                MessageBox.Show("Không thể xoá bàn trong trạng thái này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn xoá bàn này ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (tbbus.DeleteByIdBUS(Convert.ToInt32(tableIdTxt.Text)))
+                {
+                    MessageBox.Show("Xoá bàn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

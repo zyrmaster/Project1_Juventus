@@ -31,13 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fProductInfo));
             panel1 = new Panel();
             label2 = new Label();
-            noteProductTxt = new TextBox();
-            noteProduct = new Label();
             priceProductTxt = new NumericUpDown();
             priceProduct = new Label();
             sizeProductTxt = new ComboBox();
-            nonSize = new RadioButton();
-            haveSize = new RadioButton();
             label1 = new Label();
             cateProductTxt = new ComboBox();
             cateProduct = new Label();
@@ -46,7 +42,6 @@
             idProductTxt = new TextBox();
             idSp = new Label();
             titleProduct = new Label();
-            changeBtn = new Button();
             deleteBtn = new Button();
             saveBtn = new Button();
             exitBtn = new Button();
@@ -58,13 +53,9 @@
             // panel1
             // 
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(noteProductTxt);
-            panel1.Controls.Add(noteProduct);
             panel1.Controls.Add(priceProductTxt);
             panel1.Controls.Add(priceProduct);
             panel1.Controls.Add(sizeProductTxt);
-            panel1.Controls.Add(nonSize);
-            panel1.Controls.Add(haveSize);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(cateProductTxt);
             panel1.Controls.Add(cateProduct);
@@ -81,36 +72,17 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(314, 264);
+            label2.Location = new Point(316, 281);
             label2.Name = "label2";
             label2.Size = new Size(77, 24);
             label2.TabIndex = 15;
             label2.Text = "Nghìn VNĐ";
             // 
-            // noteProductTxt
-            // 
-            noteProductTxt.BorderStyle = BorderStyle.None;
-            noteProductTxt.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            noteProductTxt.Location = new Point(107, 217);
-            noteProductTxt.Name = "noteProductTxt";
-            noteProductTxt.Size = new Size(278, 25);
-            noteProductTxt.TabIndex = 14;
-            // 
-            // noteProduct
-            // 
-            noteProduct.AutoSize = true;
-            noteProduct.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            noteProduct.Location = new Point(3, 213);
-            noteProduct.Name = "noteProduct";
-            noteProduct.Size = new Size(59, 24);
-            noteProduct.TabIndex = 13;
-            noteProduct.Text = "Ghi chú";
-            // 
             // priceProductTxt
             // 
             priceProductTxt.BorderStyle = BorderStyle.None;
             priceProductTxt.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            priceProductTxt.Location = new Point(106, 262);
+            priceProductTxt.Location = new Point(108, 279);
             priceProductTxt.Name = "priceProductTxt";
             priceProductTxt.Size = new Size(206, 28);
             priceProductTxt.TabIndex = 12;
@@ -119,7 +91,7 @@
             // 
             priceProduct.AutoSize = true;
             priceProduct.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            priceProduct.Location = new Point(4, 260);
+            priceProduct.Location = new Point(6, 277);
             priceProduct.Name = "priceProduct";
             priceProduct.Size = new Size(60, 24);
             priceProduct.TabIndex = 10;
@@ -130,41 +102,17 @@
             sizeProductTxt.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
             sizeProductTxt.FormattingEnabled = true;
             sizeProductTxt.Items.AddRange(new object[] { "S", "M", "L", "Khác" });
-            sizeProductTxt.Location = new Point(278, 166);
+            sizeProductTxt.Location = new Point(110, 217);
             sizeProductTxt.Name = "sizeProductTxt";
             sizeProductTxt.Size = new Size(108, 32);
             sizeProductTxt.TabIndex = 9;
-            // 
-            // nonSize
-            // 
-            nonSize.AutoSize = true;
-            nonSize.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            nonSize.Location = new Point(108, 166);
-            nonSize.Name = "nonSize";
-            nonSize.Size = new Size(72, 28);
-            nonSize.TabIndex = 8;
-            nonSize.TabStop = true;
-            nonSize.Text = "Không";
-            nonSize.UseVisualStyleBackColor = true;
-            nonSize.CheckedChanged += nonSize_CheckedChanged;
-            // 
-            // haveSize
-            // 
-            haveSize.AutoSize = true;
-            haveSize.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            haveSize.Location = new Point(207, 169);
-            haveSize.Name = "haveSize";
-            haveSize.Size = new Size(47, 28);
-            haveSize.TabIndex = 7;
-            haveSize.TabStop = true;
-            haveSize.Text = "Có";
-            haveSize.UseVisualStyleBackColor = true;
+            sizeProductTxt.Text = "Size";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(6, 163);
+            label1.Location = new Point(8, 217);
             label1.Name = "label1";
             label1.Size = new Size(59, 24);
             label1.TabIndex = 6;
@@ -175,16 +123,17 @@
             cateProductTxt.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cateProductTxt.FormattingEnabled = true;
             cateProductTxt.Items.AddRange(new object[] { "Đồ uống", "Đồ ăn", "Dịch vụ" });
-            cateProductTxt.Location = new Point(108, 121);
+            cateProductTxt.Location = new Point(110, 163);
             cateProductTxt.Name = "cateProductTxt";
             cateProductTxt.Size = new Size(278, 32);
             cateProductTxt.TabIndex = 5;
+            cateProductTxt.Text = "Chọn loại";
             // 
             // cateProduct
             // 
             cateProduct.AutoSize = true;
             cateProduct.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cateProduct.Location = new Point(4, 121);
+            cateProduct.Location = new Point(6, 163);
             cateProduct.Name = "cateProduct";
             cateProduct.Size = new Size(72, 24);
             cateProduct.TabIndex = 4;
@@ -194,7 +143,7 @@
             // 
             nameProductTxt.BorderStyle = BorderStyle.None;
             nameProductTxt.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            nameProductTxt.Location = new Point(108, 78);
+            nameProductTxt.Location = new Point(107, 115);
             nameProductTxt.Name = "nameProductTxt";
             nameProductTxt.Size = new Size(278, 25);
             nameProductTxt.TabIndex = 3;
@@ -203,7 +152,7 @@
             // 
             nameProduct.AutoSize = true;
             nameProduct.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            nameProduct.Location = new Point(4, 74);
+            nameProduct.Location = new Point(3, 111);
             nameProduct.Name = "nameProduct";
             nameProduct.Size = new Size(100, 24);
             nameProduct.TabIndex = 2;
@@ -213,7 +162,7 @@
             // 
             idProductTxt.BorderStyle = BorderStyle.None;
             idProductTxt.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            idProductTxt.Location = new Point(108, 33);
+            idProductTxt.Location = new Point(109, 54);
             idProductTxt.Name = "idProductTxt";
             idProductTxt.Size = new Size(278, 25);
             idProductTxt.TabIndex = 1;
@@ -222,7 +171,7 @@
             // 
             idSp.AutoSize = true;
             idSp.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            idSp.Location = new Point(4, 29);
+            idSp.Location = new Point(5, 50);
             idSp.Name = "idSp";
             idSp.Size = new Size(97, 24);
             idSp.TabIndex = 0;
@@ -238,21 +187,6 @@
             titleProduct.TabIndex = 1;
             titleProduct.Text = "Quản lý sản phẩm";
             // 
-            // changeBtn
-            // 
-            changeBtn.BackColor = Color.SeaShell;
-            changeBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            changeBtn.Image = (Image)resources.GetObject("changeBtn.Image");
-            changeBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            changeBtn.Location = new Point(52, 451);
-            changeBtn.Name = "changeBtn";
-            changeBtn.Padding = new Padding(20, 0, 0, 0);
-            changeBtn.Size = new Size(137, 50);
-            changeBtn.TabIndex = 5;
-            changeBtn.Text = "Chỉnh Sửa";
-            changeBtn.UseVisualStyleBackColor = false;
-            changeBtn.Visible = false;
-            // 
             // deleteBtn
             // 
             deleteBtn.BackColor = Color.Tomato;
@@ -267,6 +201,7 @@
             deleteBtn.Text = "Xóa";
             deleteBtn.UseVisualStyleBackColor = false;
             deleteBtn.Visible = false;
+            deleteBtn.Click += deleteBtn_Click;
             // 
             // saveBtn
             // 
@@ -274,7 +209,7 @@
             saveBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
             saveBtn.Image = (Image)resources.GetObject("saveBtn.Image");
             saveBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            saveBtn.Location = new Point(52, 451);
+            saveBtn.Location = new Point(42, 451);
             saveBtn.Name = "saveBtn";
             saveBtn.Padding = new Padding(20, 0, 0, 0);
             saveBtn.Size = new Size(137, 50);
@@ -282,6 +217,7 @@
             saveBtn.Text = "Lưu";
             saveBtn.UseVisualStyleBackColor = false;
             saveBtn.Visible = false;
+            saveBtn.Click += saveBtn_Click;
             // 
             // exitBtn
             // 
@@ -289,7 +225,7 @@
             exitBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
             exitBtn.Image = (Image)resources.GetObject("exitBtn.Image");
             exitBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            exitBtn.Location = new Point(258, 451);
+            exitBtn.Location = new Point(244, 451);
             exitBtn.Name = "exitBtn";
             exitBtn.Padding = new Padding(20, 0, 0, 0);
             exitBtn.Size = new Size(137, 50);
@@ -304,7 +240,7 @@
             addBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
             addBtn.Image = (Image)resources.GetObject("addBtn.Image");
             addBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            addBtn.Location = new Point(51, 451);
+            addBtn.Location = new Point(42, 451);
             addBtn.Name = "addBtn";
             addBtn.Padding = new Padding(20, 0, 0, 0);
             addBtn.Size = new Size(137, 50);
@@ -324,7 +260,6 @@
             Controls.Add(exitBtn);
             Controls.Add(saveBtn);
             Controls.Add(deleteBtn);
-            Controls.Add(changeBtn);
             Controls.Add(titleProduct);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
@@ -349,14 +284,9 @@
         private Label cateProduct;
         private TextBox nameProductTxt;
         private Label nameProduct;
-        private TextBox noteProductTxt;
-        private Label noteProduct;
         private NumericUpDown priceProductTxt;
         private Label priceProduct;
         private ComboBox sizeProductTxt;
-        private RadioButton nonSize;
-        private RadioButton haveSize;
-        private Button changeBtn;
         private Button deleteBtn;
         private Button saveBtn;
         private Button exitBtn;

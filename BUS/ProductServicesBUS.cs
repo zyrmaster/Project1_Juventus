@@ -28,5 +28,17 @@ namespace BUS
         {
             return service.GetLastProductID();
         }
+        public bool AddProduct(Product product)
+        {
+            return service.AddProduct(product);
+        }
+        public bool EditProduct(Product product)
+        {
+            return service.EditProduct(product);
+        }
+        public bool DeleteProduct(int  id)
+        {
+            return service.DeleteProduct(id);
+        }
     }
 }

@@ -185,17 +185,7 @@
         TkSuQmCC
 </value>
   </data>
-  <data name="leaveBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
-        cQAAAnEBiCRFMAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADMSURBVDhPrdM/
-        CsIwHMXxoqCLiIh4AUdHB3Gpo4sH8AzOguA/HBQ8gYOTIngUz+X3kUbaNJVY+uADPzu8NLGJfuSMS4Er
-        3ojhTQ0HM2bSwxZHDLCEN25BFyts0NED0kdQQRM3aPV0vAVjPFGHLShaKfd8hB20R636V4FW3psxmkLz
-        C2uo6J7M9ncL34Ih7GohmWGC6goUdws6C/vKrtwWbHSIKtEhNrCA0sbcjJnkChS9yQOl/sZ0Sn9INpV+
-        yukEXyblBN9VluQ6R/EHHKouXi+BOLwAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="deleteBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="deleteVB.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
         bQAAAG0BjlwfygAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFESURBVDhPjdM/
@@ -205,6 +195,16 @@
         xBuuMfezdMEcqqlnEnMRzEa4h+576WfpgiVUU88o5iKY9fGIU+wfaLpAD0419fRjLoJZFx3PO+iXyRd4
         3nmtg27MRTBro+d5hXPsFyivvNZDO+YimLUw8DzDJZ6c8sxrA7RiLoJZAx/Q192/MCfiWS+YauppxFyE
         /+Ibin/jIvXkb2GWZfYHM5ZJTFW7JAcAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="leaveBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
+        cQAAAnEBiCRFMAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADMSURBVDhPrdM/
+        CsIwHMXxoqCLiIh4AUdHB3Gpo4sH8AzOguA/HBQ8gYOTIngUz+X3kUbaNJVY+uADPzu8NLGJfuSMS4Er
+        3ojhTQ0HM2bSwxZHDLCEN25BFyts0NED0kdQQRM3aPV0vAVjPFGHLShaKfd8hB20R636V4FW3psxmkLz
+        C2uo6J7M9ncL34Ih7GohmWGC6goUdws6C/vKrtwWbHSIKtEhNrCA0sbcjJnkChS9yQOl/sZ0Sn9INpV+
+        yukEXyblBN9VluQ6R/EHHKouXi+BOLwAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="changeBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
