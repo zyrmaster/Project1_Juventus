@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using BUS;
 
 namespace GUI
 {
@@ -18,19 +19,34 @@ namespace GUI
         private bool isDragging = false;
         private Point lastCursor;
         private Point lastForm;
+        Employee employee = new Employee();
         ctTableManager tableControl = new ctTableManager();
         ctProductManager productManager = new ctProductManager();
-        ctHome ctHome = new ctHome();
         ctStatic ctStatic = new ctStatic();
         ctInfomation ctInfomation = new ctInfomation();
+        AccountBUS accountBUS = new AccountBUS();
+        EmployerBUS employerBUS = new EmployerBUS();
+
         public fTableManager(Account accountInfo)
         {
             InitializeComponent();
             _accountInfo = accountInfo;
+            int roleID = Convert.ToInt32(_accountInfo.RoleId);
+            roleLabel.Text = accountBUS.GetRoleName(roleID);
+            int AccountId = _accountInfo.Id;
+            employee = employerBUS.GetEmployeeByAccountId(AccountId);
+            ctHome ctHome = new ctHome(employee);
+            if (employee != null)
+            {
+                nametitleLabel.Text = employee.EmployeeName;
+            }
+            else
+            {
+                nametitleLabel.Text = "Phần mềm";
+            }
             mainContainer.Controls.Clear();
             mainContainer.Controls.Add(ctHome);
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -108,6 +124,9 @@ namespace GUI
         private void homeBtn_Click(object sender, EventArgs e)
         {
             mainContainer.Controls.Clear();
+            int AccountID = _accountInfo.Id;
+            employee = employerBUS.GetEmployeeByAccountId(AccountID);
+            ctHome ctHome = new ctHome(employee);
             mainContainer.Controls.Add(ctHome);
         }
 
@@ -138,6 +157,11 @@ namespace GUI
         {
             mainContainer.Controls.Clear();
             mainContainer.Controls.Add(ctStatic);
+        }
+
+        private void settingBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -46,8 +46,6 @@ namespace GUI
             priceProduct.Text = product.Price.ToString() + "K";
             sizeProduct.Text = product.ProductType.ToString();
         }
-
-
         private void ProductSell_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             ProductIdCart = product.Id;

@@ -19,6 +19,10 @@ namespace BUS
         {
             return accSv.AccountChecking(username);
         }
+        public bool AddAccount(Account account)
+        {
+            return accSv.AddAccount(account);
+        }
         public bool AuthAccount(string username,string password) {
             return accSv.AuthAccount(username,password);
         }
@@ -33,6 +37,26 @@ namespace BUS
         public Employee GetEmployeeById(int accountId)
         {
             return accSv.GetEmployeeById(accountId);
+        }
+        public string GetRoleName(int roleId)
+        {
+            return accSv.GetRoleName(roleId);
+        }
+        public Account GetAccountByIdBUS(int accountId)
+        {
+            return accSv.GetAccountByID(accountId);
+        }
+        public bool EditAccountBUS(Account account)
+        {
+            return accSv.EditAccount(account);
+        }
+        public List<Account> GetAllAccountBUS()
+        {
+            return accSv.GetAllAccount();
+        }
+        public int GetLast()
+        {
+            return accSv.getLast();
         }
     }
 }

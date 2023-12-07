@@ -57,7 +57,7 @@
             // 
             tableId.AutoSize = true;
             tableId.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            tableId.Location = new Point(98, 2);
+            tableId.Location = new Point(106, 2);
             tableId.Name = "tableId";
             tableId.Size = new Size(50, 24);
             tableId.TabIndex = 2;
@@ -73,8 +73,9 @@
             Controls.Add(customerName);
             Controls.Add(billName);
             Name = "BillHistory";
-            Size = new Size(152, 66);
+            Size = new Size(172, 66);
             Load += BillHistory_Load;
+            Click += BillHistory_Click;
             ResumeLayout(false);
             PerformLayout();
         }

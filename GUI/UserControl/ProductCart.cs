@@ -17,7 +17,10 @@ namespace GUI
         ProductServicesBUS servicesBUS = new ProductServicesBUS();
         Product product = new Product();
         int ProductSet;
-        public ProductCart(int ProductId)
+        public event EventHandler<int> removeClickSender;
+        public event EventHandler<(int Quantity, int OtherValue)> ValuesChanged;
+        public int CountProduct { get; set; }
+        public ProductCart(int ProductId,int quantily)
         {
             InitializeComponent();
             this.Anchor = AnchorStyles.None;
@@ -41,11 +44,28 @@ namespace GUI
             }
             priceProduct.Text = product.Price.ToString();
             sizeProduct.Text = product.ProductType.ToString();
+            countProductSell.Value = quantily;
         }
-
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             Parent.Controls.Remove(this);
+            removeClickSender?.Invoke(sender, product.Id);
+        }
+        public (int Quantity, int ProductID) GetValues()
+        {
+            int quantity = Convert.ToInt32(countProductSell.Value);
+            int ProductID = product.Id;
+
+            return (quantity, ProductID);
+        }
+        private void countProductSell_ValueChanged(object sender, EventArgs e)
+        {
+            var values = GetValues();
+            OnValuesChanged(values);
+        }
+        protected virtual void OnValuesChanged((int Quantity, int OtherValue) values)
+        {
+            ValuesChanged?.Invoke(this, values);
         }
     }
 }

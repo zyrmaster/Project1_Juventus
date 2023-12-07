@@ -34,16 +34,16 @@ namespace GUI
             {
                 MessageBox.Show("Tài khoản không tồn tại trong hệ thống , vui lòng kiểm tra lại !!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //if (usernameTextBox.Text.Length == 0 || usernameTextBox.Text == "Tên đăng nhập...")
-            //{
-            //    MessageBox.Show("Vui lòng nhập tên tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-            //if (passwordTextBox.Text.Length == 0 || passwordTextBox.Text == "Password")
-            //{
-            //    MessageBox.Show("Vui lòng nhập mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+            if (usernameTextBox.Text.Length == 0 || usernameTextBox.Text == "Tên đăng nhập...")
+            {
+                MessageBox.Show("Vui lòng nhập tên tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (passwordTextBox.Text.Length == 0 || passwordTextBox.Text == "Password")
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
 
 

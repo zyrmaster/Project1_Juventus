@@ -30,3 +30,8 @@ public partial class Product
     [InverseProperty("Products")]
     public virtual ProductCategory Category { get; set; } = null!;
 }
+public class ProductWithQuantity
+{
+    public Product OriginalProduct { get; set; }
+    public int Quantity { get; set; }
+}

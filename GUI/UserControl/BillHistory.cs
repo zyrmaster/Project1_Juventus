@@ -17,30 +17,55 @@ namespace GUI
         BillServicesBUS servicesBUS = new BillServicesBUS();
         CustomerBUS customerBUS = new CustomerBUS();
         Bill bill = new Bill();
-        public BillHistory(int billId)
+        Employee _employee = new Employee();
+        public BillHistory(int billId,Employee employee)
         {
+            _employee = employee;
             InitializeComponent();
             bill = servicesBUS.GetBill(billId);
-            billName.Text = "Hoá đơn số " + bill.Id.ToString();
-            if (bill.Status == "Đã thanh toán")
+            billName.Text = "ID Bill : " + bill.Id.ToString();
+            if (bill.Status == "0")
             {
                 this.BackColor = Color.Aquamarine;
             }
-            else if (bill.Status == "Chưa thanh toán")
+            else if (bill.Status == "1")
             {
                 this.BackColor = Color.LightSkyBlue;
             }
-            else if (bill.Status == "Hoá đơn lỗi")
+            else if (bill.Status == "2")
             {
                 this.BackColor = Color.Magenta;
             }
-            tableId.Text = "Bàn " + bill.TableId.ToString();
+            if (bill.TableId == 9999)
+            {
+                tableId.Text = "Mang đi";
+            }
+            else
+            {
+                tableId.Text = "Bàn " + bill.TableId.ToString();
+            }
+            
             customerName.Text = customerBUS.GetCustomerName(bill.CustomerId);
         }
 
         private void BillHistory_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BillHistory_Click(object sender, EventArgs e)
+        {
+            if(bill.Status == "0")
+            {
+                
+                CreateBill createBill = new CreateBill(1,_employee,bill.Id); // mo hoa don cu
+                createBill.ShowDialog();
+            }
+            else if(bill.Status == "1")
+            {
+                BillShow billShow = new BillShow(bill);
+                billShow.ShowDialog();
+            }
         }
     }
 }

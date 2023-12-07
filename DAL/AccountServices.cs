@@ -22,11 +22,32 @@ namespace DAL
             _lstRole = new List<Role>();
             _lstEmployee = new List<Employee>();
         }
-        public string AddAccount(Account acc)
+        public bool AddAccount(Account acc)
         {
-            _dbContext.Accounts.Add(acc);
-            _dbContext.SaveChanges();
-            return "Thêm thành công !";
+            try
+            {
+                var isExits = _dbContext.Accounts.FirstOrDefault(c=>c.Id == acc.Id);
+                if (isExits != null)
+                {
+                    Account newAccount = new Account();
+                    newAccount.Id = acc.Id;
+                    newAccount.Username = acc.Username;
+                    newAccount.Password = acc.Password;
+                    newAccount.RoleId = acc.RoleId;
+                    newAccount.DisplayName = acc.DisplayName;
+                    _dbContext.Accounts.Add(newAccount);
+                    _dbContext.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
         public bool UpdateAccount(Account acc)
         {
@@ -62,6 +83,10 @@ namespace DAL
             }
             return false;
         }
+        public List<Account> GetAllAccount()
+        {
+            return _dbContext.Accounts.ToList();
+        }
         public string DeleteAccount(int id)
         {
             var acc = _dbContext.Accounts.FirstOrDefault(c => c.Id == id);
@@ -75,6 +100,22 @@ namespace DAL
                 return true;
             }
             else { return false; }
+        }
+        public bool EditAccount(Account account)
+        {
+            var isExits = _dbContext.Accounts.FirstOrDefault(c=>c.Id== account.Id);
+            if (isExits != null)
+            {
+                isExits.Id = isExits.Id;
+                isExits.DisplayName = account.DisplayName;
+                isExits.Username = account.Username;
+                isExits.Password = account.Password;
+                isExits.RoleId = account.RoleId;
+                _dbContext.SaveChanges();
+                return true;
+
+            }
+            return false;
         }
         public bool AuthAccount(string username,string password)
         {
@@ -101,6 +142,14 @@ namespace DAL
         {
             return _dbContext.Employees.FirstOrDefault(c=>c.Id == accountId);
             
+        }
+        public Account GetAccountByID(int accountId)
+        {
+            return _dbContext.Accounts.FirstOrDefault(c => c.Id == accountId);
+        }
+        public int getLast()
+        {
+            return _dbContext.Accounts.OrderBy(c => c.Id).Last().Id;
         }
     }
 }

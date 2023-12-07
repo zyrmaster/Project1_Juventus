@@ -29,6 +29,11 @@ namespace GUI
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            if (customerBUS.CheckPhoneExits(phoneTxt.Text))
+            {
+                MessageBox.Show("Số điện thoại đã tồn tại trong hệ thống !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             Customer customer = new Customer();
             customer.Id = Convert.ToInt32(customerIdTxt.Text);
             customer.CustomerName = customerNameTxt.Text;

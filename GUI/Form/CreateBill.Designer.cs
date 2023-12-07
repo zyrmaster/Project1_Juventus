@@ -61,6 +61,7 @@
             bankBtn = new Button();
             postBtn = new Button();
             getoutBtn = new Button();
+            addBtn = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -247,6 +248,7 @@
             tableList.Name = "tableList";
             tableList.Size = new Size(130, 29);
             tableList.TabIndex = 7;
+            tableList.Text = "1";
             // 
             // label5
             // 
@@ -268,6 +270,8 @@
             typeBill.Name = "typeBill";
             typeBill.Size = new Size(130, 29);
             typeBill.TabIndex = 5;
+            typeBill.Text = "Tại quán";
+            typeBill.TextChanged += typeBill_TextChanged;
             // 
             // label4
             // 
@@ -344,14 +348,16 @@
             confirmBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
             confirmBtn.Image = (Image)resources.GetObject("confirmBtn.Image");
             confirmBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            confirmBtn.Location = new Point(495, 564);
+            confirmBtn.Location = new Point(489, 564);
             confirmBtn.Name = "confirmBtn";
             confirmBtn.Padding = new Padding(20, 0, 0, 0);
-            confirmBtn.Size = new Size(124, 50);
+            confirmBtn.Size = new Size(137, 50);
             confirmBtn.TabIndex = 5;
             confirmBtn.Text = "Xác nhận";
             confirmBtn.TextAlign = ContentAlignment.MiddleRight;
             confirmBtn.UseVisualStyleBackColor = false;
+            confirmBtn.Visible = false;
+            confirmBtn.Click += confirmBtn_Click;
             // 
             // payBtn
             // 
@@ -383,6 +389,7 @@
             printBtn.Text = "In hoá đơn";
             printBtn.TextAlign = ContentAlignment.MiddleRight;
             printBtn.UseVisualStyleBackColor = false;
+            printBtn.Click += printBtn_Click;
             // 
             // exitBtn
             // 
@@ -398,6 +405,7 @@
             exitBtn.Text = "Huỷ bỏ";
             exitBtn.TextAlign = ContentAlignment.MiddleRight;
             exitBtn.UseVisualStyleBackColor = false;
+            exitBtn.Click += exitBtn_Click;
             // 
             // cashBtn
             // 
@@ -430,6 +438,7 @@
             bankBtn.TextAlign = ContentAlignment.MiddleRight;
             bankBtn.UseVisualStyleBackColor = false;
             bankBtn.Visible = false;
+            bankBtn.Click += bankBtn_Click;
             // 
             // postBtn
             // 
@@ -465,21 +474,38 @@
             getoutBtn.Visible = false;
             getoutBtn.Click += getoutBtn_Click;
             // 
+            // addBtn
+            // 
+            addBtn.BackColor = Color.SeaShell;
+            addBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            addBtn.Image = (Image)resources.GetObject("addBtn.Image");
+            addBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            addBtn.Location = new Point(489, 564);
+            addBtn.Name = "addBtn";
+            addBtn.Padding = new Padding(20, 0, 0, 0);
+            addBtn.Size = new Size(137, 50);
+            addBtn.TabIndex = 13;
+            addBtn.Text = "   Thêm";
+            addBtn.UseVisualStyleBackColor = false;
+            addBtn.Visible = false;
+            addBtn.Click += addBtn_Click;
+            // 
             // CreateBill
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1074, 648);
-            Controls.Add(getoutBtn);
             Controls.Add(exitBtn);
-            Controls.Add(confirmBtn);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(bankBtn);
             Controls.Add(postBtn);
             Controls.Add(cashBtn);
+            Controls.Add(addBtn);
+            Controls.Add(confirmBtn);
             Controls.Add(payBtn);
             Controls.Add(printBtn);
+            Controls.Add(getoutBtn);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "CreateBill";
             StartPosition = FormStartPosition.CenterScreen;
@@ -525,5 +551,6 @@
         private Button bankBtn;
         private Button postBtn;
         private Button getoutBtn;
+        private Button addBtn;
     }
 }

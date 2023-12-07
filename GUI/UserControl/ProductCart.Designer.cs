@@ -35,7 +35,9 @@
             pictureBox1 = new PictureBox();
             cateProduct = new Label();
             deleteBtn = new Button();
+            countProductSell = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)countProductSell).BeginInit();
             SuspendLayout();
             // 
             // nameProduct
@@ -94,11 +96,23 @@
             deleteBtn.UseVisualStyleBackColor = true;
             deleteBtn.Click += deleteBtn_Click;
             // 
+            // countProductSell
+            // 
+            countProductSell.BorderStyle = BorderStyle.None;
+            countProductSell.Location = new Point(435, 11);
+            countProductSell.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            countProductSell.Name = "countProductSell";
+            countProductSell.Size = new Size(38, 19);
+            countProductSell.TabIndex = 6;
+            countProductSell.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            countProductSell.ValueChanged += countProductSell_ValueChanged;
+            // 
             // ProductCart
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(countProductSell);
             Controls.Add(deleteBtn);
             Controls.Add(cateProduct);
             Controls.Add(pictureBox1);
@@ -109,6 +123,7 @@
             Name = "ProductCart";
             Size = new Size(550, 41);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)countProductSell).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,5 +136,6 @@
         private PictureBox pictureBox1;
         private Label cateProduct;
         private Button deleteBtn;
+        private NumericUpDown countProductSell;
     }
 }

@@ -27,5 +27,29 @@ namespace BUS
         {
             return customerServices.GetCustomerByPhone(phone);
         }
+        public bool CheckPhoneExits(string phone)
+        {
+            return customerServices.CheckPhoneExists(phone);
+        }
+        public int GetCustomerIDByName(string name)
+        {
+            return customerServices.GetCustomerIDByName(name);
+        }
+        public Customer GetCustomerById(int id)
+        {
+            return customerServices.GetCustomerById(id);
+        }
+        public List<Customer> GetAll()
+        {
+            return customerServices.GetCustomersLST();
+        }
+        public bool DeleteCustomerById(int id)
+        {
+            return customerServices.DeleteCustomer(id);
+        }
+        public bool EditCustomerBUS(Customer customer)
+        {
+            return customerServices.EditCustomer(customer);
+        }
     }
 }

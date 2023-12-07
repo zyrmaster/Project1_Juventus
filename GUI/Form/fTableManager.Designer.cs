@@ -254,13 +254,14 @@
             settingBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
             settingBtn.Image = (Image)resources.GetObject("settingBtn.Image");
             settingBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            settingBtn.Location = new Point(10, 454);
+            settingBtn.Location = new Point(12, 444);
             settingBtn.Name = "settingBtn";
             settingBtn.Padding = new Padding(20, 0, 0, 0);
             settingBtn.Size = new Size(195, 49);
             settingBtn.TabIndex = 9;
-            settingBtn.Text = "Cài đặt";
+            settingBtn.Text = "Thoát chương trình";
             settingBtn.UseVisualStyleBackColor = false;
+            settingBtn.Click += settingBtn_Click;
             // 
             // staticBtn
             // 
@@ -268,7 +269,7 @@
             staticBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
             staticBtn.Image = (Image)resources.GetObject("staticBtn.Image");
             staticBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            staticBtn.Location = new Point(11, 392);
+            staticBtn.Location = new Point(10, 334);
             staticBtn.Name = "staticBtn";
             staticBtn.Padding = new Padding(20, 0, 0, 0);
             staticBtn.Size = new Size(195, 49);
@@ -283,7 +284,7 @@
             infomationBtn.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
             infomationBtn.Image = (Image)resources.GetObject("infomationBtn.Image");
             infomationBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            infomationBtn.Location = new Point(11, 334);
+            infomationBtn.Location = new Point(12, 389);
             infomationBtn.Name = "infomationBtn";
             infomationBtn.Padding = new Padding(20, 0, 0, 0);
             infomationBtn.Size = new Size(195, 49);
@@ -307,7 +308,7 @@
             // 
             profile.Image = (Image)resources.GetObject("profile.Image");
             profile.InitialImage = (Image)resources.GetObject("profile.InitialImage");
-            profile.Location = new Point(73, 21);
+            profile.Location = new Point(77, 28);
             profile.Name = "profile";
             profile.Size = new Size(64, 64);
             profile.SizeMode = PictureBoxSizeMode.AutoSize;

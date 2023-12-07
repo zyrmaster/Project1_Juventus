@@ -78,6 +78,9 @@ INSERT INTO Tables (ID, Name, Slot, Status) VALUES
 (9, N'Bàn 9', 3, N'Trống'),
 (10, N'Bàn 10', 5, N'Trống');
 
+INSERT INTO Tables (ID, Name, Slot, Status) VALUES
+(9999, N'Bàn mang về', 1, N'Trống')
+
 CREATE TABLE Bills (
 	ID INT PRIMARY KEY,
 	DateIn datetime NOT NULL,
@@ -148,3 +151,27 @@ INSERT INTO Product (ID, Name, Price, CategoryID,ProductType) VALUES
 (13, 'Thuốc lá Camel', 42000, 3,'M'),
 (14, 'Khăn lau mặt', 12000, 3,'M'),
 (15, 'Thuốc lá Winston', 40000, 3,'M');
+
+CREATE TABLE Counpon(
+	ID int PRIMARY KEY,
+	TenMa varchar(255) NOT NULL,
+	MaSuDung Varchar(255) NOT NULL,
+	GiamGia int NOT NULL,
+	TongLuotDung int NOT NULL,
+	DanhSachDaDung varchar(255) NOT NULL,
+	HanSuDung datetime NOT NULL
+);
+INSERT INTO Counpon (ID, TenMa, MaSuDung, GiamGia, TongLuotDung, DanhSachDaDung, HanSuDung)
+VALUES (1, 'MA50', 'N/A', 50, 0, '', '2023-12-31');
+
+INSERT INTO Counpon (ID, TenMa, MaSuDung, GiamGia, TongLuotDung, DanhSachDaDung, HanSuDung)
+VALUES (2, 'MA20', 'N/A', 20, 0, '', '2023-12-31');
+
+INSERT INTO Counpon (ID, TenMa, MaSuDung, GiamGia, TongLuotDung, DanhSachDaDung, HanSuDung)
+VALUES (3, 'MA15', 'N/A', 15, 0, '', '2023-12-31');
+
+INSERT INTO Counpon (ID, TenMa, MaSuDung, GiamGia, TongLuotDung, DanhSachDaDung, HanSuDung)
+VALUES (4, 'MA10', 'N/A', 10, 0, '', '2023-12-31');
+
+INSERT INTO Counpon (ID, TenMa, MaSuDung, GiamGia, TongLuotDung, DanhSachDaDung, HanSuDung)
+VALUES (5, 'MA5', 'N/A', 5, 0, '', '2023-12-31');

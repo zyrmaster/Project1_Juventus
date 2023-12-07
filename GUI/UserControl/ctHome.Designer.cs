@@ -41,8 +41,6 @@
             groupBox4 = new GroupBox();
             button4 = new Button();
             button3 = new Button();
-            label1 = new Label();
-            textBox1 = new TextBox();
             billControlGroup = new FlowLayoutPanel();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -78,6 +76,7 @@
             historyBtn.TabIndex = 5;
             historyBtn.Text = "Lịch sử";
             historyBtn.UseVisualStyleBackColor = false;
+            historyBtn.Click += historyBtn_Click;
             // 
             // listCustomerBtn
             // 
@@ -92,6 +91,7 @@
             listCustomerBtn.TabIndex = 6;
             listCustomerBtn.Text = "Danh sách";
             listCustomerBtn.UseVisualStyleBackColor = false;
+            listCustomerBtn.Click += listCustomerBtn_Click;
             // 
             // couponBtn
             // 
@@ -104,8 +104,9 @@
             couponBtn.Padding = new Padding(20, 0, 0, 0);
             couponBtn.Size = new Size(195, 91);
             couponBtn.TabIndex = 7;
-            couponBtn.Text = "Khuyến mại";
+            couponBtn.Text = "Thông tin";
             couponBtn.UseVisualStyleBackColor = false;
+            couponBtn.Click += couponBtn_Click;
             // 
             // groupBox1
             // 
@@ -144,6 +145,7 @@
             button1.TabIndex = 7;
             button1.Text = "Đổi điểm";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // groupBox3
             // 
@@ -168,8 +170,9 @@
             button2.Padding = new Padding(20, 0, 0, 0);
             button2.Size = new Size(195, 91);
             button2.TabIndex = 8;
-            button2.Text = "Danh sách";
+            button2.Text = "Giảm giá";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // groupBox4
             // 
@@ -194,8 +197,9 @@
             button4.Padding = new Padding(20, 0, 0, 0);
             button4.Size = new Size(195, 91);
             button4.TabIndex = 10;
-            button4.Text = "Ca làm";
+            button4.Text = "Quản lý";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -210,33 +214,15 @@
             button3.TabIndex = 9;
             button3.Text = "Thông tin";
             button3.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(604, 277);
-            label1.Name = "label1";
-            label1.Size = new Size(71, 24);
-            label1.TabIndex = 13;
-            label1.Text = "Tìm kiếm";
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Bahnschrift Light Condensed", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(681, 272);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(245, 32);
-            textBox1.TabIndex = 14;
-            textBox1.Text = "Nhập tên để tìm kiếm";
+            button3.Click += button3_Click;
             // 
             // billControlGroup
             // 
             billControlGroup.BackColor = Color.White;
             billControlGroup.BorderStyle = BorderStyle.Fixed3D;
-            billControlGroup.Location = new Point(24, 315);
+            billControlGroup.Location = new Point(24, 253);
             billControlGroup.Name = "billControlGroup";
-            billControlGroup.Size = new Size(910, 341);
+            billControlGroup.Size = new Size(910, 403);
             billControlGroup.TabIndex = 15;
             // 
             // ctHome
@@ -245,8 +231,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             Controls.Add(billControlGroup);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -258,7 +242,6 @@
             groupBox3.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -275,8 +258,6 @@
         private Button button2;
         private Button button4;
         private Button button3;
-        private Label label1;
-        private TextBox textBox1;
         private FlowLayoutPanel billControlGroup;
     }
 }
